@@ -16,6 +16,7 @@ import { FooterComponent } from './footer/footer.component';
 import { UserloginComponent } from './userlogin/userlogin.component';
 import { MainpageComponent } from './mainpage/mainpage.component';
 import { PipesComponent } from './pipes/pipes.component';
+import { HttpNgforComponent } from './http-ngfor/http-ngfor.component';
 
 const appRoutes: Routes = [
   {
@@ -29,7 +30,12 @@ const appRoutes: Routes = [
   {
     path: 'pipes',
     component: PipesComponent
- }
+ },
+ {
+  path: 'http-ngfor',
+  component: HttpNgforComponent
+}
+
 
 ];
 // hint :use into html files <router-outlet></router-outlet> 
@@ -41,7 +47,8 @@ const appRoutes: Routes = [
       FooterComponent,
       UserloginComponent,
       MainpageComponent,
-      PipesComponent
+      PipesComponent,
+      HttpNgforComponent
   ],
   imports: [
     BrowserModule,

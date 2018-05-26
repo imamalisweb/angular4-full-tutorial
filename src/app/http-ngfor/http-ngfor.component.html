@@ -1,0 +1,15 @@
+<h1>Component http-ngFor </h1>
+<div class ="var2style">
+    <p> Get user json via Http Response   </p>
+  <button (click) ="getUserData()"> Click http.get()</button>
+</div>
+
+<div class ="var1style">
+    <h2>ngFor  - iteration </h2>
+    <ul>
+    <li *ngFor="let users of userDataRes; let idx = index">
+             {{ users.id }}   - {{ users.name }}   -{{ users.username }}   (index={{idx}})
+    </li>
+    
+    </ul>
+</div>

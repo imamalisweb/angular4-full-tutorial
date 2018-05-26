@@ -6,7 +6,7 @@ import { Http } from '@angular/http';
 import { Response } from '@angular/http/src/static_response';
 import { map } from 'rxjs/operators';
 
-class SearchItem {
+class UserItem {
   constructor(public id: string,
               public name: string,
               public username: string) {
@@ -20,6 +20,10 @@ class SearchItem {
 
 export class UserloginComponent implements OnInit {
   formdata;
+  curUsers;
+  userDataRes;
+
+
   constructor(private router: Router, private http: Http) { }
   ngOnInit() {
      this.formdata = new FormGroup({
@@ -31,21 +35,7 @@ export class UserloginComponent implements OnInit {
      });
   }
 
-  getUserData() {
-    this.http.get('https://jsonplaceholder.typicode.com/users')
-    .subscribe(
-      (res: Response) => {
-        const userDataRes = res.json().map(item => {
-          return new SearchItem(
-            item.id,
-            item.name,
-            item.username);
-        });
-        console.log(userDataRes);
-      }
-    );
-
- }
+ 
 
   passwordvalidation(formcontrol) {
      if (formcontrol.value.length < 5) {
@@ -54,6 +44,7 @@ export class UserloginComponent implements OnInit {
   }
   onClickSubmit(data) {
      console.log(data.uname);
+     
      if (data.uname === 'systemadmin' && data.passwd === 'admin123') {
         alert('Login Successful');
         this.router.navigate( ['app-mainpage'] );
