@@ -41,7 +41,7 @@ export class UserloginComponent implements OnInit {
 
   passwordvalidation(formcontrol) {
      if (formcontrol.value.length < 5) {
-        return {'pwddd' : true};
+        return {'pwd' : true};
      }
   }
   onClickSubmit(data) {

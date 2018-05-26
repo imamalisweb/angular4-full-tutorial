@@ -13,3 +13,21 @@
     
     </ul>
 </div>
+
+
+
+<h1>http post from .php file  </h1>
+<div class ="var2style">
+    <p> response from php    </p>
+  <button (click) ="getUserDataPhp()"> Click http.post from php ()</button>
+</div>
+
+<div class ="var1style">
+    <h2>ngFor  - iteration </h2>
+    <ul>
+    <li *ngFor="let users of userDataResPhp; let idx = index">
+             {{ users.id }}   - {{ users.name }}   -{{ users.username }}   (index={{idx}})
+    </li>
+    
+    </ul>
+</div>

@@ -18,6 +18,7 @@ import { MainpageComponent } from './mainpage/mainpage.component';
 import { PipesComponent } from './pipes/pipes.component';
 import { HttpNgforComponent } from './http-ngfor/http-ngfor.component';
 import { UserService } from './services/user.service';
+import { AuthGuard }  from './auth.guard';
 
 const appRoutes: Routes = [
   {
@@ -26,7 +27,8 @@ const appRoutes: Routes = [
   },
   {
      path: 'app-mainpage',
-     component: MainpageComponent
+     component: MainpageComponent,
+     canActivate: [AuthGuard] //pls try to access directrly the link without login to check the auth
   },
   {
     path: 'pipes',
@@ -60,7 +62,7 @@ const appRoutes: Routes = [
      // MdTableModule,
      // MdInputModule
   ],
-  providers: [UserService],
+  providers: [UserService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

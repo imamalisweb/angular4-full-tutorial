@@ -1,5 +1,5 @@
 <div   class="headstyle">
     <p >
-        header works! <span class="pstyle"> {{myUserService.whoLogged}}  </span>** get the name directly from the service 
+        header works! <span class="pstyle" [hidden]="!myUserService.getUserLoggedStatus()"  > {{myUserService.whoLogged}}  ** get the name directly from the service </span>
     </p>
 </div> 

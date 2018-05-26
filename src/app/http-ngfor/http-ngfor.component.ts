@@ -5,6 +5,7 @@ import { map } from 'rxjs/operators';
 import { Router } from '@angular/router';
 import { FormGroup, FormControl } from '@angular/forms';
 import { Validators } from '@angular/forms';
+import { Headers, RequestOptions } from '@angular/http';
 
 
 class UserItem {
@@ -21,6 +22,7 @@ class UserItem {
 })
 export class HttpNgforComponent implements OnInit {
   userDataRes;
+  userDataResPhp;
 
   constructor(private router: Router, private http: Http) { }
 
@@ -40,6 +42,10 @@ export class HttpNgforComponent implements OnInit {
          console.log(this.userDataRes);
        }
      );
- 
+  }
+
+
+  getUserDataPhp() {
+
   }
 }

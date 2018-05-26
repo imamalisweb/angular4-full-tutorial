@@ -1,4 +1,6 @@
 import { Injectable } from '@angular/core';
+//import { mariasql } from "node_modules/mariasql/node_modules/node";
+//import { mariasql } from 'mariasql';
 
 @Injectable({
   providedIn: 'root'
@@ -20,7 +22,25 @@ private  whoLogged = 'anonymous';
     this.whoLogged = 'admin';
    }
 
-   getUserLoggedStatus(){
+   getUserLoggedStatus() {
      return this.isUserLoggedIn;
    }
+
+   runSelectCmd() {
+    // const  Client = require('mariasql');
+
+    // const c = new Client({
+    //   host: '127.0.0.1',
+    //   user: 'root',
+    //   password: ''
+    // });
+    // c.query('SHOW DATABASES', function(err, rows) {
+    //   console.dir(rows);
+    // });
+    
+    // c.end();
+
+   }
+
+
 }
