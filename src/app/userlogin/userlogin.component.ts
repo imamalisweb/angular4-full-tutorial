@@ -5,6 +5,7 @@ import { Validators } from '@angular/forms';
 import { Http } from '@angular/http';
 import { Response } from '@angular/http/src/static_response';
 import { map } from 'rxjs/operators';
+import { UserService }  from '../services/user.service';
 
 class UserItem {
   constructor(public id: string,
@@ -24,12 +25,13 @@ export class UserloginComponent implements OnInit {
   userDataRes;
 
 
-  constructor(private router: Router, private http: Http) { }
+  constructor(private router: Router, private http: Http, private myUserService: UserService) { }
+  
   ngOnInit() {
      this.formdata = new FormGroup({
         uname: new FormControl('', Validators.compose([
            Validators.required,
-           Validators.minLength(6)
+           Validators.minLength(4)
         ])),
         passwd: new FormControl('', this.passwordvalidation)
      });
@@ -44,9 +46,10 @@ export class UserloginComponent implements OnInit {
   }
   onClickSubmit(data) {
      console.log(data.uname);
-     
-     if (data.uname === 'systemadmin' && data.passwd === 'admin123') {
-        alert('Login Successful');
+
+     if (data.uname === 'admin' && data.passwd === 'admin') {
+        console.log('Login Successful');
+        this.myUserService.setUserLoggedStatus(true);
         this.router.navigate( ['app-mainpage'] );
      }
   }

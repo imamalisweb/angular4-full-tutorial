@@ -17,6 +17,7 @@ import { UserloginComponent } from './userlogin/userlogin.component';
 import { MainpageComponent } from './mainpage/mainpage.component';
 import { PipesComponent } from './pipes/pipes.component';
 import { HttpNgforComponent } from './http-ngfor/http-ngfor.component';
+import { UserService } from './services/user.service';
 
 const appRoutes: Routes = [
   {
@@ -59,7 +60,7 @@ const appRoutes: Routes = [
      // MdTableModule,
      // MdInputModule
   ],
-  providers: [],
+  providers: [UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

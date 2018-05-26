@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UserService }  from '../services/user.service';
 
 @Component({
   selector: 'app-mainpage',
@@ -7,9 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MainpageComponent implements OnInit {
 
-  constructor() { }
+  constructor(private myUserService: UserService) { }
 
   ngOnInit() {
+    console.log(this.myUserService.getUserLoggedStatus());
   }
 
 }
