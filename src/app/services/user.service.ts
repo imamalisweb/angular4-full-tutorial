@@ -27,18 +27,7 @@ private  whoLogged = 'anonymous';
    }
 
    runSelectCmd() {
-    // const  Client = require('mariasql');
-
-    // const c = new Client({
-    //   host: '127.0.0.1',
-    //   user: 'root',
-    //   password: ''
-    // });
-    // c.query('SHOW DATABASES', function(err, rows) {
-    //   console.dir(rows);
-    // });
-    
-    // c.end();
+  //  http://localhost/db-to-api-master/db-to-api-master/
 
    }
 

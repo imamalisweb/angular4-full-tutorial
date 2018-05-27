@@ -46,6 +46,20 @@ export class HttpNgforComponent implements OnInit {
 
 
   getUserDataPhp() {
+    //header("Content-type:application/json");
+
+    this.http.post(' http://localhost/db-to-api-master/db-to-api-master/')
+    .subscribe(
+      (res: Response) => {
+         this.userDataResPhp = res.json().map(item => {
+          return new UserItem(
+            item.id,
+            item.name,
+            item.username);
+        });
+        console.log(this.userDataResPhp);
+      }
+    );
 
   }
 }
