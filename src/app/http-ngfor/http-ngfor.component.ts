@@ -71,6 +71,10 @@ export class HttpNgforComponent implements OnInit {
   username: string;  
 }
 
+dont forget to import Interface
+import {InterfaceName} from 'path/to/..............interface';
+
+
 
   getUsers(): Observable<USerAbstr[]> {
     return this._http
