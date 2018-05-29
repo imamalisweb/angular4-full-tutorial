@@ -62,4 +62,36 @@ export class HttpNgforComponent implements OnInit {
     );
 
   }
+  
+  /* ------Observable----------------
+    --- you need to create a new file  with the Interface 
+    export interface USerAbstr {
+  id: string;
+  name: string;
+  username: string;  
+}
+
+
+  getUsers(): Observable<USerAbstr[]> {
+    return this._http
+        .get('https://jsonplaceholder.typicode.com/users')
+        .map((response: Response) => <USerAbstr[]> response.json())
+        // .do(data => console.log(data))
+        .catch(this.handleError);
+  }
+
+  getUser(id: string): Observable<USerAbstr> {
+    return this.getUsers()
+    .map((_users: USerAbstr[]) => _users.find(_users => _users.id === id))
+    .do(data => console.log(data));
+  }
+
+    private handleError(error: Response) {
+    console.error(error);
+    let message = `Error status code ${error.status} at ${error.url}`;
+    return Observable.throw(message);
+  }
+  */
+  
+  
 }
